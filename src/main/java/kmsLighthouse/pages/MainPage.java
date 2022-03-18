@@ -16,7 +16,7 @@ public class MainPage {
 
     public MainPage waitForPopup() {
         new WebDriverWait(driver, 5).until(ExpectedConditions
-                .visibilityOfAllElementsLocatedBy(By.xpath("//*[@class = \"leadin-preview-wrapper\"]")));
+                .visibilityOfElementLocated(By.xpath("//*[@class = \"leadin-preview-wrapper\"]")));
         return this;
     }
 
