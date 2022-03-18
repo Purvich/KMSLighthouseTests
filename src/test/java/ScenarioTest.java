@@ -2,15 +2,15 @@ import kmsLighthouse.pages.MainPage;
 import kmsLighthouse.Params;
 import kmsLighthouse.pages.WelcomePage;
 import kmsLighthouse.pages.YouTubeVideoPage;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ScenarioTest extends BaseTest {
 
     @Test
     @Order(1)
     void firstScenario() {
+
         /*
          * Open the following page: https://www.kmslh.com/automation-test/
          * Fill all the relevant information with random valid values
@@ -35,6 +35,7 @@ public class ScenarioTest extends BaseTest {
     @Test
     @Order(2)
     void secondScenario() {
+
         /*
          * Open the following page: https://www.kmslh.com/automation-test/
          * on the redirected page, wait for the popup and click copy link button

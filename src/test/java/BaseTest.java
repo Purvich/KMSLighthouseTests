@@ -25,13 +25,8 @@ public class BaseTest {
         driver.get(Params.BASE_URL);
     }
 
-//    @AfterEach
-//    void clearCookie() {
-//        driver.manage().deleteAllCookies();
-//    }
-
-    @AfterAll
-    static void tearDown() {
+    @AfterEach
+    void tearDown() {
         driver.quit();
     }
 }
