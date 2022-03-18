@@ -23,10 +23,10 @@ public class MainPage {
     //Закрытие popup
 
     @FindBy(xpath = "//*[@class = \"leadinModal-close\"]")
-    public WebElement closeButtonForModalWindow;
+    public WebElement closeButtonForPopup;
 
-    public MainPage closeModalWindow() {
-        closeButtonForModalWindow.click();
+    public MainPage closePopup() {
+        closeButtonForPopup.click();
         return this;
     }
 
