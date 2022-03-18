@@ -5,7 +5,7 @@ import kmsLighthouse.pages.YouTubeVideoPage;
 import org.junit.jupiter.api.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class FirstScenarioTest extends BaseTest {
+public class ScenarioTest extends BaseTest {
 
     @Test
     @Order(1)
