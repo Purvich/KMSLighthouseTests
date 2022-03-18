@@ -1,4 +1,4 @@
-# KMSLighthouseTests
+# KMS Lighthouse Tests
 
 <h2>Scenario 1:</h2>
 <ol>
