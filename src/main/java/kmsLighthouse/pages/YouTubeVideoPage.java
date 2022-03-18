@@ -20,7 +20,7 @@ public class YouTubeVideoPage {
     //Получение название видео после успешного перехода
 
     public String successText() {
-        new WebDriverWait(driver,5).until(ExpectedConditions
+        new WebDriverWait(driver, 5).until(ExpectedConditions
                 .visibilityOfAllElementsLocatedBy(By
                         .xpath("//*[@class = \"title style-scope ytd-video-primary-info-renderer\"]")));
         String successText = nameVideo.getText();

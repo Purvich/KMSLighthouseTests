@@ -15,7 +15,7 @@ public class MainPage {
     //Ожидание popup
 
     public MainPage waitForPopup() {
-        new WebDriverWait(driver,5).until(ExpectedConditions
+        new WebDriverWait(driver, 5).until(ExpectedConditions
                 .visibilityOfAllElementsLocatedBy(By.xpath("//*[@class = \"leadin-preview-wrapper\"]")));
         return this;
     }
@@ -99,7 +99,7 @@ public class MainPage {
 
     //Метод получения ссылки на видео
 
-    public String getLinkVideo () {
+    public String getLinkVideo() {
         String linkVideo = this.elementWithLinkVideo.getAttribute("href");
         return linkVideo;
     }
