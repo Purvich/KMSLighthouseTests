@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class WelcomePage {
 
     WebDriver driver;
@@ -18,7 +20,7 @@ public class WelcomePage {
     //Получение текста после успешного перехода
 
     public String successText() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
                 .visibilityOfAllElementsLocatedBy(By
                         .xpath("//*[@class = \"elementor-heading-title elementor-size-small\"]")));
         String successText = headingTitle.getText();

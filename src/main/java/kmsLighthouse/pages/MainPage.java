@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class MainPage {
 
     WebDriver driver;
@@ -15,7 +17,7 @@ public class MainPage {
     //Ожидание popup
 
     public MainPage waitForPopup() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
                 .visibilityOfElementLocated(By.xpath("//*[@class = \"leadin-preview-wrapper\"]")));
         return this;
     }
