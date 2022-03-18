@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 public class SecondScenarioTest extends BaseTest{
 
     @Test
-    @Order(2)
     void secondScenario() {
 
         /*

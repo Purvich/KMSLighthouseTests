@@ -3,11 +3,9 @@ import kmsLighthouse.Params;
 import kmsLighthouse.pages.WelcomePage;
 import org.junit.jupiter.api.*;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class FirstScenarioTest extends BaseTest {
 
     @Test
-    @Order(1)
     void firstScenario() {
 
         /*
