@@ -1,24 +1,23 @@
 package kmsLighthouse.pages;
 
+import kmsLighthouse.BaseView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+public class MainPage extends BaseView {
 
-public class MainPage {
-
-    WebDriver driver;
+    public MainPage(WebDriver driver) {
+        super(driver);
+    }
 
     //Ожидание popup
 
     public MainPage waitForPopup() {
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
-                .visibilityOfElementLocated(By.xpath("//*[@class = \"leadin-preview-wrapper\"]")));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By
+                .xpath("//*[@class = \"leadin-preview-wrapper\"]")));
         return this;
     }
 
@@ -111,10 +110,5 @@ public class MainPage {
     public YouTubeVideoPage goToVideoPage() {
         driver.get(getLinkVideo());
         return new YouTubeVideoPage(driver);
-    }
-
-    public MainPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
     }
 }
