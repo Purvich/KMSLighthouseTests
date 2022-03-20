@@ -45,7 +45,7 @@ public class ScenarioTest extends BaseTest {
 
         new MainPage(driver)
                 .waitForPopup()
-                .goToVideoPage();
+                .goToYouTubeVideoPage();
 
         Assertions.assertEquals(Params.NAME_VIDEO, new YouTubeVideoPage(driver).successText());
     }

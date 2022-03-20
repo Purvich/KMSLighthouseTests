@@ -107,7 +107,7 @@ public class MainPage extends BaseView {
 
     //метод открытия ссылки на видео
 
-    public YouTubeVideoPage goToVideoPage() {
+    public YouTubeVideoPage goToYouTubeVideoPage() {
         driver.get(getLinkVideo());
         return new YouTubeVideoPage(driver);
     }
