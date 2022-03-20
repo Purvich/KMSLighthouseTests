@@ -9,6 +9,7 @@ public class ScenarioTest extends BaseTest {
 
     @Test
     @Order(1)
+    @DisplayName("Scenario 1")
     void firstScenario() {
 
         /*
@@ -34,6 +35,7 @@ public class ScenarioTest extends BaseTest {
 
     @Test
     @Order(2)
+    @DisplayName("Scenario 2")
     void secondScenario() {
 
         /*
