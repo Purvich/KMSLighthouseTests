@@ -1,6 +1,6 @@
-package kmsLighthouse;
+package kmsLighthouse.data;
 
-public class Params {
+public class Data {
     public static final String BASE_URL = "https://www.kmslh.com/automation-test/";
     public static final String FIRST_NAME = "Tester";
     public static final String LAST_NAME = "Testerovich";

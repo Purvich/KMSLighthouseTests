@@ -1,5 +1,7 @@
+package kmsLighthouse.base;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import kmsLighthouse.Params;
+import kmsLighthouse.data.Data;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest {
 
-    static WebDriver driver;
+    protected static WebDriver driver;
     ChromeOptions options = new ChromeOptions();
 
     @BeforeAll
@@ -21,7 +23,7 @@ public class BaseTest {
     void initDriver() {
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
-        driver.get(Params.BASE_URL);
+        driver.get(Data.BASE_URL);
     }
 
     @AfterEach

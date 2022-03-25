@@ -1,107 +1,70 @@
 package kmsLighthouse.pages;
 
-import kmsLighthouse.BaseView;
-import org.openqa.selenium.By;
+import kmsLighthouse.base.BaseView;
+import kmsLighthouse.locators.MainPageLocators;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainPage extends BaseView {
 
-    public MainPage(WebDriver driver) {
-        super(driver);
-    }
-
     //Ожидание popup
-
     public MainPage waitForPopup() {
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By
-                .xpath("//*[@class = \"leadin-preview-wrapper\"]")));
+        webDriverWait.until(ExpectedConditions.visibilityOf(locators().popupMenu));
         return this;
     }
 
     //Закрытие popup
-
-    @FindBy(xpath = "//*[@class = \"leadinModal-close\"]")
-    public WebElement closeButtonForPopup;
-
     public MainPage closePopup() {
-        closeButtonForPopup.click();
+        locators().closeButtonForPopup.click();
         return this;
     }
-
-    @FindBy(name = "firstname")
-    public WebElement inputFirstName;
-
-    @FindBy(name = "lastname")
-    public WebElement inputLastName;
-
-    @FindBy(name = "email")
-    public WebElement inputEmail;
-
-    @FindBy(name = "phone")
-    public WebElement inputPhoneNumber;
-
-    @FindBy(name = "company")
-    public WebElement inputCompanyName;
 
     //Метод заполнения всех обязательных полей
-
     public MainPage fillAllInputs(String firstName, String lastName, String eMail,
                                   String phoneNumber, String companyName) {
-        inputFirstName.sendKeys(firstName);
-        inputLastName.sendKeys(lastName);
-        inputEmail.sendKeys(eMail);
-        inputPhoneNumber.sendKeys(phoneNumber);
-        inputCompanyName.sendKeys(companyName);
+        locators().inputFirstName.sendKeys(firstName);
+        locators().inputLastName.sendKeys(lastName);
+        locators().inputEmail.sendKeys(eMail);
+        locators().inputPhoneNumber.sendKeys(phoneNumber);
+        locators().inputCompanyName.sendKeys(companyName);
         return this;
     }
 
-    @FindBy(xpath = "//*[@type=\"submit\"]")
-    public WebElement buttonSubmit;
-
     //Метод нажатия на кнопку Submit
-
     public WelcomePage clickButtonSubmit() {
-        buttonSubmit.click();
+        locators().buttonSubmit.click();
         return new WelcomePage(driver);
     }
 
     //Добавлены отдельные методы заполнения полей для использования в других тестах.
-
     public MainPage fillInputFirstName(String firstName) {
-        inputFirstName.sendKeys(firstName);
+        locators().inputFirstName.sendKeys(firstName);
         return this;
     }
 
     public MainPage fillInputLastName(String lastName) {
-        inputLastName.sendKeys(lastName);
+        locators().inputLastName.sendKeys(lastName);
         return this;
     }
 
     public MainPage fillInputEmail(String eMail) {
-        inputEmail.sendKeys(eMail);
+        locators().inputEmail.sendKeys(eMail);
         return this;
     }
 
     public MainPage fillInputPhone(String phoneNumber) {
-        inputPhoneNumber.sendKeys(phoneNumber);
+        locators().inputPhoneNumber.sendKeys(phoneNumber);
         return this;
     }
 
     public MainPage fillInputCompanyName(String companyName) {
-        inputCompanyName.sendKeys(companyName);
+        locators().inputCompanyName.sendKeys(companyName);
         return this;
     }
 
-    @FindBy(xpath = "//*[@class=\"leadinModal-description-body\"]/p/a")
-    public WebElement elementWithLinkVideo;
-
     //Метод получения ссылки на видео
-
     public String getLinkVideo() {
-        String linkVideo = this.elementWithLinkVideo.getAttribute("href");
+        String linkVideo = this.locators().elementWithLinkVideo.getAttribute("href");
         return linkVideo;
     }
 
@@ -110,5 +73,13 @@ public class MainPage extends BaseView {
     public YouTubeVideoPage goToYouTubeVideoPage() {
         driver.get(getLinkVideo());
         return new YouTubeVideoPage(driver);
+    }
+
+    public MainPage(WebDriver driver) {
+        super(driver);
+    }
+
+    private MainPageLocators locators() {
+        return new MainPageLocators(driver);
     }
 }

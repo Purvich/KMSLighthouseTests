@@ -1,11 +1,14 @@
+package kmsLighthouse.scenarioTest;
+
+import kmsLighthouse.base.BaseTest;
 import kmsLighthouse.pages.MainPage;
-import kmsLighthouse.Params;
+import kmsLighthouse.data.Data;
 import kmsLighthouse.pages.WelcomePage;
 import kmsLighthouse.pages.YouTubeVideoPage;
 import org.junit.jupiter.api.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class ScenarioTest extends BaseTest {
+public class ScenarioTest extends BaseTest{
 
     @Test
     @Order(1)
@@ -23,14 +26,14 @@ public class ScenarioTest extends BaseTest {
                 .waitForPopup()
                 .closePopup()
                 .fillAllInputs(
-                        Params.FIRST_NAME,
-                        Params.LAST_NAME,
-                        Params.E_MAIL,
-                        Params.PHONE_NUMBER,
-                        Params.COMPANY_NAME)
+                        Data.FIRST_NAME,
+                        Data.LAST_NAME,
+                        Data.E_MAIL,
+                        Data.PHONE_NUMBER,
+                        Data.COMPANY_NAME)
                 .clickButtonSubmit();
 
-        Assertions.assertEquals(Params.SUCCESS_TEXT, new WelcomePage(driver).successText());
+        Assertions.assertEquals(Data.SUCCESS_TEXT, new WelcomePage(driver).successText());
     }
 
     @Test
@@ -49,6 +52,6 @@ public class ScenarioTest extends BaseTest {
                 .waitForPopup()
                 .goToYouTubeVideoPage();
 
-        Assertions.assertEquals(Params.NAME_VIDEO, new YouTubeVideoPage(driver).successText());
+        Assertions.assertEquals(Data.NAME_VIDEO, new YouTubeVideoPage(driver).successText());
     }
 }
