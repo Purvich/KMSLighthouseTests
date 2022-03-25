@@ -11,7 +11,7 @@
 <h2>Scenario 2:</h2>
 <ol>
   <li>Open the following <a href="https://www.kmslh.com/automation-test/">page</a></li>
-  <li>On the redirected page, wait for the popup and click copy link button/li>
+  <li>On the redirected page, wait for the popup and click copy link button</li>
   <li>Open the copied link</li>
   <li>Verify GE Healthcare: A KMS Lighthouse Success Story video is opened.</li>
 </ol>
